@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import springrestEx.dao.CustomerPaymentDao;
 import springrestEx.dao.CustomerPaymentDaoImpl;
+import springrestEx.exceptionHandler.CustomerNotFoundException;
 import springrestEx.model.Customer;
 import springrestEx.service.CustomerService;
 
@@ -28,8 +29,9 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return customerPaymentDao.getListCustomer();
 	}
-
-	public void addOrUpdate(Customer customer) {
+	
+	
+    public void addOrUpdate(Customer customer) {
 		
 		customerPaymentDao.addOrUpdate(customer);
 		
@@ -45,6 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerPaymentDao.findCustomer(id);
 	}
 
+	
 	
 	
 
